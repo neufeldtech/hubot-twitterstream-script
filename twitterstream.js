@@ -23,10 +23,10 @@
 // Hacker:
 //    Jordan Neufeld <myjc.niv@gmail.com>
 
-var consumer_key = process.env.TWITTER_CONSUMER_KEY
-var consumer_secret = process.env.TWITTER_CONSUMER_SECRET
-var access_token_key = process.env.TWITTER_ACCESS_TOKEN_KEY
-var access_token_secret = process.env.TWITTER_ACCESS_TOKEN_SECRET
+var consumer_key = process.env.HUBOT_TWITTER_CONSUMER_KEY
+var consumer_secret = process.env.HUBOT_TWITTER_CONSUMER_SECRET
+var access_token_key = process.env.HUBOT_TWITTER_ACCESS_TOKEN_KEY
+var access_token_secret = process.env.HUBOT_TWITTER_ACCESS_TOKEN_SECRET
 
 //The in-memory only array for the stream objects (NOT hubot's brain!)
 var streamsMemory = []
