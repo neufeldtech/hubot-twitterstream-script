@@ -20,6 +20,8 @@
 //
 // Author:
 //   Christophe Hamerling
+// Hacker:
+//    Jordan Neufeld <myjc.niv@gmail.com>
 
 var consumer_key = process.env.TWITTER_CONSUMER_KEY
 var consumer_secret = process.env.TWITTER_CONSUMER_SECRET
@@ -55,7 +57,7 @@ function initStream(tag, room, robot) {
             })
             stream.on('data', function(data) {
                 robot.logger.debug(data.text)
-                robot.messageRoom(room, '@' + data.user.screen_name + " (" + data.user.name + ") - " + data.text + '\n');
+                robot.messageRoom(room, ':twitter: @' + data.user.screen_name + " (" + data.user.name + ") - " + data.text + '\n');
             });
 
             stream.on('destroy', function(data) {
@@ -77,7 +79,7 @@ function resumeStream(tag, room, robot, newStreamsObject) {
         })
         stream.on('data', function(data) {
             robot.logger.debug(data.text)
-            robot.messageRoom(room, '@' + data.user.screen_name + " (" + data.user.name + ") - " + data.text + '\n');
+            robot.messageRoom(room, ':twitter: @' + data.user.screen_name + " (" + data.user.name + ") - " + data.text + '\n');
         });
         stream.on('destroy', function(data) {
             robot.messageRoom(room, 'I do not watch ' + tag + ' anymore...')
